@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Filechecker</title>
+</head>
+<body bgcolor="sky blue">
+<h2 align="center" style="color: blue;">Online File Explorer</h2>
+<form action="{{ url_for('robo') }}" method="POST" onsubmit="WriteToFile(this)">
+   <div> <input type="text" name="dir1" placeholder="Enter the directory path.." >  <input type="text" name="type1" placeholder="Enter the type of the file.." ></div>
+
+   <br><br>
+   <div><input type="submit" value="EXPLORE" style="color:green; font-weight:bold"></div>
+</form>
+<br><br><br>
+<div style="color:red; font-weight:bold ">______DATE_________________________________________________________FILE NAME_____________________________________________________SIZE_______________________</div>
+ <div><textarea autofocus="right" placeholder="Files will be displayed here........" name="corr" rows="40" cols="180">{{root}}</textarea>
+
+
+
+<form action="{{ url_for('delete') }}" method="POST" onsubmit="Delete(this)">
+	<input type="submit" value="    Reset   " style="color:green; font-weight:bold">
+</form>
+
+
+
+</body>
+</html>
